@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Q Promo Extension",
+  "description": "Determine promo codes for Q.",
+  "version": "1.0",
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://tickets.qnightclub.com/e/*/tickets"],
+      "js": ["popup.js"]
+    }
+  ],
+
+  "permissions": [
+    "webRequest"
+  ],
+
+  "host_permissions": [
+    "https://tickets.qnightclub.com/orders/calculate_price"
+  ]
+}
